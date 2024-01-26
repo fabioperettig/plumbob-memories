@@ -39,6 +39,13 @@ body {
     transform: skew(-15deg);
 }
 
+.screenShot {
+    margin-right: 20px;
+    width: 30%;
+    border-radius: 5px;
+    border: 10px solid #020d5d;
+}
+
 .cover {
     width: 100vw;
     height: 100vh;
@@ -57,20 +64,42 @@ h1 {
 }
 
 .module {
+    box-sizing: border-box;
     box-shadow: inset -10px 10px 10px 0 rgba(255, 255, 255, 0.158), inset 10px -10px 10px 0 rgba(0, 0, 0, .2);
-    width: 95vw;
+    width: 80vw;
     height: auto;
     display: flex;
     flex-direction: column;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moduleb {
+    width: 95vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 20px auto;
     align-items: center;
     
     border-radius: 20px;
-  }
+}
 
-  .module > p {
+.module, .moduleb > p {
     font-size: 14pt;
     text-align: justify;
     color: aliceblue;
     padding: 20px 40px;
-  }
+}
+
+.modWright > img {
+    width: 200px;
+    padding: 20px 80px 20px 40px;
+}
