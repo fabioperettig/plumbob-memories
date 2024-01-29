@@ -21,3 +21,8 @@ document.querySelector('.btn2').addEventListener('click', () => {
     var topPos = targetElement.getBoundingClientRect().top - offset;
     window.scrollBy({ top: topPos, behavior: 'smooth' });
 })
+
+document.querySelector('.btn3').addEventListener('click', () => {
+    window.parent.exibirAlerta();
+})
+

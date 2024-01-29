@@ -5,6 +5,7 @@
     <link rel="shortchut icon" type="x-icon" href="_elements/the-sims-ico.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="alertStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
@@ -47,8 +48,16 @@
         </p>
     </div>
 
-    <object type="text/html" data="alerts_PTBR.html" width="100%" height="300"></object>
 
+    <div id="alerta" class="alert" style="display:none">
+        <div class="alert-row">
+            <img src="_elements/achievement-img.png" alt="achievement">
+            <p>Meus parabêns, você agora sabe como funciona a pirâmide de Maslow, e aumentou sua habilidade de lógica.</p>
+        </div>
+        <button class="btn btnCloseAlert">Fechar</button>
+    </div>
+
+    <div id="alert-border" class="alert-border" style="display:none"></div>
 
     <script src="script.js"></script>
     <script src="alertScript.js"></script>

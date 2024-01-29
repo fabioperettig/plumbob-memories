@@ -11,6 +11,11 @@ body {
     "MONO" 1;
 }
 
+body.alerta-exibido{
+    overflow: hidden;
+}
+
+
 .head {
     width: 100vw;
     padding: 5px 0;
@@ -81,14 +86,13 @@ h1 {
 }
 
 .moduleb {
-    width: 95vw;
+    width: 80vw;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
+    margin: 90px auto;
     align-items: center;
-    
     border-radius: 20px;
 }
 
@@ -100,6 +104,5 @@ h1 {
 }
 
 .modWright > img {
-    width: 200px;
-    padding: 20px 80px 20px 40px;
+    width: 180px;
 }

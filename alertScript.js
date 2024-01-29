@@ -1,4 +1,28 @@
-document.querySelector('.btn4').addEventListener('click', () => {
-    var targetElement = document.querySelector('.alert');
-    targetElement.remove();
+var alerta = document.getElementById("alerta");
+var alertBorder = document.getElementById("alert-border");
+let isExibirAlertaAtivo = true;
+
+function exibirAlerta() {
+
+    if (isExibirAlertaAtivo) {
+        alerta.style.display = "block";
+        alertBorder.style.display = "block";
+        var body = document.getElementsByTagName("body")[0];
+        body.classList.add("alerta-exibido");
+    }
+
+}
+
+document.querySelector('.btnCloseAlert').addEventListener('click', () => {
+    alerta.style.display = "none";
+    alertBorder.style.display = "none";
+    var body = document.getElementsByTagName("body")[0];
+    body.classList.remove("alerta-exibido");
+    
+    isExibirAlertaAtivo = false
+
+    setTimeout(() => {
+        isExibirAlertaAtivo = true
+    }, 10000);
+
 })
