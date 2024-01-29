@@ -1,18 +1,23 @@
 .alert{
     box-sizing: border-box;
-    box-shadow: inset -10px 10px 10px 0 rgba(255, 255, 255, 0.158), inset 10px -10px 10px 0 rgba(0, 0, 0, .2);
+    box-shadow: inset -10px 10px 5px 0px rgba(255, 255, 255, 0.331), inset 10px -10px 10px 0 rgba(0, 0, 0, .2);
     position:fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 40%;
+    padding: 30px;
     z-index: 9999;
     background-color: #020052;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+}
+
+.alert-row{
+    display: flex;
+    align-items:start;
+    gap: 10px;
 }
 
 .alert-border{
@@ -29,11 +34,16 @@
 
 .alert-row > p{
     font-size: 12pt;
-    color: white;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .alert-row > img{
-    margin: 50px 25px;
-    width: 25%;
+    width: 30%;
     height: auto;
+}
+
+.alert > button{
+    position: relative;
+    margin-left: 40%;
+    margin-top: 5%;
 }

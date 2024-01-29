@@ -9,6 +9,9 @@ function exibirAlerta() {
         alertBorder.style.display = "block";
         var body = document.getElementsByTagName("body")[0];
         body.classList.add("alerta-exibido");
+        var audio = new Audio('_elements/achievement01.mp3');
+        audio.volume = 0.5;
+        audio.play();
     }
 
 }
