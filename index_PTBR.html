@@ -10,17 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
     <title>TS1 the best ever had</title>
+   
 </head>
 <body>
     
-    <div id="head" class="head">
+    <!-- <div id="head" class="head">
         <button class="btn btn1">what's this site?</button>
         <button class="btn btn2">About Wright</button>
         <button class="btn btn3">Maslow theory</button>
         <button class="btn btn4">TSRadio</button>
-    </div>
+    </div> -->
 
-    
+    <div id="header-footer"></div>
+
     <div id="cover" class="cover">
         <img src="/_elements/plumbob_green.webp" alt="The Sims Pumbob">
         <div id="coverText" class="coverText">
@@ -43,11 +45,12 @@
     </div>
 
     <div id="module" class="moduleb modWright">
-        <img src="_elements/Will_Wright2.png" alt="">
+        <img id="willImg" class="willImg" src="_elements/Will_Wright2.png" alt="">
         <p>William Ralph "Will" Wright é designer de jogos americano e co-fundador da Maxis. Ele é conhecido como o designer original de três grandes sucessos do mundo dos Games: The Sims, SimCity e Spore, que é a mais recente série criado por ele. Will Wright conseguiu imaginar em sua mente um conceito completamente novo, onde ele e outras pessoas comandassem a história, ações, e tudo o que fosse possível, por meio de simuladores simples e práticos, porém, poderosos, que pudessem levar a imaginação do jogador aonde ele quiser.
         </p>
     </div>
 
+    <!-- CRIAR UM HTML PARA ALERTAS -->
 
     <div id="alerta" class="alert" style="display:none">
         <div class="alert-row">
@@ -59,8 +62,15 @@
 
     <div id="alert-border" class="alert-border" style="display:none"></div>
 
-    <script src="script.js"></script>
-    <script src="alertScript.js"></script>
+    <!-- <script src="script.js"></script>
+    <script src="alertScript.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $("#header-footer").load("header-footer.html");
+        });
+    </script>
 
 </body>
 </html>

@@ -26,3 +26,6 @@ document.querySelector('.btn3').addEventListener('click', () => {
     window.parent.exibirAlerta();
 })
 
+document.getElementById("willImg").addEventListener('click', () => {
+    window.parent.exibirAlerta();
+})
