@@ -5,6 +5,8 @@ progress.style.width = 100+'%';
 const originalWidth = parseFloat(window.getComputedStyle(progress, null).getPropertyValue("width")); // Salva a largura original da barra de progresso como um número
 let timeHunger, timeEating;
 
+timeHunger = setInterval(moodHunger, 1000); // Fome diminui com o tempo
+
 // Função para diminuir a fome com o tempo
 function moodHunger() {
     let hunger = parseInt(progress.style.width); // Obtém a largura atual como um número
@@ -16,9 +18,12 @@ function moodHunger() {
     }    
 }
 
-timeHunger = setInterval(moodHunger, 1000); // Fome diminui com o tempo
 
 comer.addEventListener('click', () => {
+    comer.disabled = true; // desativa o botão
+    setTimeout(() => {
+        comer.disabled = false; // reativa o botão após 10 segundos
+    }, 10000); // 10 segundos em milissegundos
     clearInterval(timeHunger); // Para o intervalo de diminuição da largura, se estiver ativo
     let currentWidth = parseFloat(window.getComputedStyle(progress, null).getPropertyValue("width")); // Obtém a largura atual como um número
     if (currentWidth < originalWidth) {
