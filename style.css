@@ -63,6 +63,11 @@ body.alerta-exibido{
     width: 300px;
 }
 
+.coverText > img {
+    margin-top: 50px;
+    width: 500px;
+}
+
 h1 {
     font-size: 40pt;
     color: #ffffff;
@@ -105,6 +110,7 @@ h1 {
 
 .modWright > img {
     width: 180px;
+    transition: 0.5s ease;
 }
 
 .modWright > img:hover{

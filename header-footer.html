@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="moodStyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,8 +15,42 @@
             <button class="btn btn4">TSRadio</button>
         </nav>
     </header>
+
+    <footer>
+        
+        <div id="moodBtn" class="moodBtn">
+            <button class="btn btnHunger">Eat</button>
+        </div>
+        <div id="moodContainer" class="moodContainer">
+            <div id="moodHunger" class="mood moodHunger">
+                <h6>Fome</h6>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            <div id="moodEnergy" class="mood moodEnergy">
+                <h6>Energia</h6>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            <div id="moodBladder" class="mood moodBladder">
+                <h6>Banheiro</h6>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            <div id="moodHygiene" class="mood moodHygiene">
+                <h6>Higiene</h6>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <script src="script.js"></script>
     <script src="alertScript.js"></script>
+    <script src="moodScript.js"></script>
 </body>
 </html>
