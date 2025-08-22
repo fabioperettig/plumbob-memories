@@ -1,7 +1,10 @@
-window.addEventListener('DOMContentLoaded', () => {
+console.log('setupAllMoods RODANDO');
+
+function initializeMoods() {
 
     const moods = [
         {
+            icon: 'hunger.png',
             name: 'Fome',
             barId: 'progressFome',
             buttonClass: 'btnHunger',
@@ -11,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
             coolDown: 10000
         },
         {
+            icon: 'sleep.png',
             name: 'Energia',
             barId: 'progressEnergia',
             buttonClass: 'btnEnergy',
@@ -20,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
             coolDown: 15000
         },
         {
+            icon: 'toilet.png',
             name: 'Banheiro',
             barId: 'progressBanheiro',
             buttonClass: 'btnBladder',
@@ -29,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
             coolDown: 10000
         },
         {
+            icon: 'shower.png',
             name: 'Higiene',
             barId: 'progressHigiene',
             buttonClass: 'btnHygiene',
@@ -38,6 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
             coolDown: 10000
         },
         {
+            icon: 'fun.png',
             name: 'Diversão',
             barId: 'progressDiversao',
             buttonClass: 'btnFun',
@@ -48,7 +55,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    const container = document.body;
+    const container = document.getElementById('moodContainer');
+    
+    const grid = document.createElement('div');
+    grid.classList.add('mood-grid');
 
     moods.forEach(mood => {
 
@@ -62,16 +72,36 @@ window.addEventListener('DOMContentLoaded', () => {
         barContainer.appendChild(bar);
         
         //create button
-        const button = document.createElement('button');
-        button.classList.add(mood.buttonClass);
-        button.textContent = `Usar ${mood.name}`;
+        const button = document.createElement('img');
+        button.classList.add(mood.buttonClass, 'mood-icon');
+        button.src = `./_elements/_moodPNG/${mood.icon}`;
+        button.alt = mood.name;
+        button.title = `Usar ${mood.name}`;
+
+        //hover
+        const originalSrc = button.src;
+        const hoverSrc = originalSrc.replace('.png', '-hover.png');
+
+        button.addEventListener('mouseenter', () => {
+            button.src = hoverSrc;
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.src = originalSrc;
+        });
 
         //adiciona ao DOM
-        container.appendChild(barContainer);
-        container.appendChild(button);
+        const moodRow = document.createElement('div');
+        moodRow.classList.add('mood-row');
+        moodRow.appendChild(button);
+        moodRow.appendChild(barContainer);
+        container.appendChild(moodRow);
+        
 
         //ativa a lógica
         setupMood(mood);
 
     });
-});
+
+    container.appendChild(grid);
+};

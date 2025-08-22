@@ -1,0 +1,53 @@
+.moodContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1px 0;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 1px 2px; /* 10px vertical entre linhas, 60px horizontal entre colunas */
+}
+
+.mood-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+
+.mood-icon {
+    width: 30px;    
+    height: auto;
+    cursor: pointer;
+}
+
+.bar-container {
+    width: 150px;
+    height: 15px;
+    border-radius: 1px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Cores de fundo conforme o nível de necessidade */
+.bar-container.high {
+    background-color: #51615F;
+}
+
+.bar-container.medium {
+    background-color: #703536;
+}
+
+.bar-container.low {
+    background-color: #D30206;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #07FF0D;
+    transition: width 0.2s ease;
+}

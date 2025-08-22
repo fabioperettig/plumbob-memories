@@ -62,10 +62,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            $("#header-footer").load("header-footer.html");
+            $("#header-footer").load("header-footer.html", function() {
+                $.getScript("script.js");
+                $.getScript("alertScript.js");
+                $.getScript("moodScript.js", function() {
+                    $.getScript("setupAllMoods.js", function() {
+                        initializeMoods();
+                    });
+                });
+            });
         });
     </script>
-
 
 </body>
 </html>
