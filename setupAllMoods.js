@@ -9,19 +9,9 @@ function initializeMoods() {
             barId: 'progressFome',
             buttonClass: 'btnHunger',
             decreaseInterval: 1000,
-            decreaseAmount: 5,
-            increaseAmount: 10,
-            coolDown: 10000
-        },
-        {
-            icon: 'sleep.png',
-            name: 'Energia',
-            barId: 'progressEnergia',
-            buttonClass: 'btnEnergy',
-            decreaseInterval: 900,
             decreaseAmount: 2,
-            increaseAmount: 20,
-            coolDown: 15000
+            increaseAmount: 100,
+            coolDown: 50000
         },
         {
             icon: 'toilet.png',
@@ -34,6 +24,26 @@ function initializeMoods() {
             coolDown: 10000
         },
         {
+            icon: 'fun.png',
+            name: 'Diversão',
+            barId: 'progressDiversao',
+            buttonClass: 'btnFun',
+            decreaseInterval: 400,
+            decreaseAmount: 7,
+            increaseAmount: 5,
+            coolDown: 10000
+        },
+        {
+            icon: 'sleep.png',
+            name: 'Energia',
+            barId: 'progressEnergia',
+            buttonClass: 'btnEnergy',
+            decreaseInterval: 900,
+            decreaseAmount: 1,
+            increaseAmount: 20,
+            coolDown: 15000
+        },
+        {
             icon: 'shower.png',
             name: 'Higiene',
             barId: 'progressHigiene',
@@ -44,10 +54,10 @@ function initializeMoods() {
             coolDown: 10000
         },
         {
-            icon: 'fun.png',
-            name: 'Diversão',
-            barId: 'progressDiversao',
-            buttonClass: 'btnFun',
+            icon: 'social.png',
+            name: 'social',
+            barId: 'progressSocial',
+            buttonClass: 'btnSocial',
             decreaseInterval: 400,
             decreaseAmount: 7,
             increaseAmount: 5,
@@ -69,6 +79,7 @@ function initializeMoods() {
         const bar = document.createElement('div');
         bar.classList.add('progress-bar');
         bar.id = mood.barId;
+        bar.style.width = '100%';
         barContainer.appendChild(bar);
         
         //create button
@@ -95,7 +106,8 @@ function initializeMoods() {
         moodRow.classList.add('mood-row');
         moodRow.appendChild(button);
         moodRow.appendChild(barContainer);
-        container.appendChild(moodRow);
+        grid.appendChild(moodRow);
+        container.appendChild(grid);
         
 
         //ativa a lógica

@@ -1,22 +1,26 @@
 .moodContainer {
     display: flex;
-    justify-content: center;
-    padding: 1px 0;
 }
 
 .mood-grid {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(2, auto);
-    gap: 1px 2px; /* 10px vertical entre linhas, 60px horizontal entre colunas */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 10px 50px;
+    padding: 10px;
+
+    width: fit-content;         /* <- Isso permite que o grid se encolha até o conteúdo */
+    margin: 10px auto;             /* <- Isso centraliza horizontalmente */
 }
 
 .mood-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.1);
-
+    /* background: rgba(255, 255, 255, 0.1); */
+    position: relative; /* <- adicione isso */
+    height: auto;
+    width: auto;
 }
 
 .mood-icon {
@@ -25,29 +29,53 @@
     cursor: pointer;
 }
 
+.mood-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
 .bar-container {
     width: 150px;
     height: 15px;
     border-radius: 1px;
     overflow: hidden;
     position: relative;
+    top: 0%;
+    left: 0%;
+    background-color: #51615F;
+    z-index: 1;
 }
 
 /* Cores de fundo conforme o nível de necessidade */
-.bar-container.high {
-    background-color: #51615F;
+.progress-bar.full {
+    background-color: #07FF0D;
 }
 
-.bar-container.medium {
+.progress-bar.high {
+    background-color: #10bd13;
+}
+
+.progress-bar.medium {
     background-color: #703536;
 }
 
-.bar-container.low {
+.progress-bar.low {
     background-color: #D30206;
 }
 
 .progress-bar {
     height: 100%;
-    background-color: #07FF0D;
     transition: width 0.2s ease;
+}
+
+#footerZone {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #001A57;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }

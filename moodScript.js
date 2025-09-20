@@ -6,7 +6,8 @@ function setupMood({
     decreaseInterval,
     decreaseAmount,
     increaseAmount,
-    coolDown
+    coolDown,
+    
 })
 
 {
@@ -24,6 +25,7 @@ function setupMood({
             let newWidth = currentWidth - decreaseAmount;
             if (newWidth < 0) newWidth = 0;
             progress.style.width = newWidth + '%';
+            updateProgressColor();
         } else {
             clearInterval(timeDecrease);
         }
@@ -54,6 +56,22 @@ function setupMood({
                 timeDecrease = setInterval(decreaseMood, decreaseInterval);
             }
             progress.style.width = newWidth + '%';
+            updateProgressColor();
+        }
+    }
+
+        function updateProgressColor() {
+        let currentWidth = parseInt(progress.style.width);
+
+        progress.classList.remove('full', 'high', 'medium', 'low');
+        if (currentWidth >= 80 || currentWidth === originalWidth) {
+            progress.classList.add('full');
+        } else if (currentWidth > 40) {
+            progress.classList.add('high');
+        } else if (currentWidth > 20) {
+            progress.classList.add('medium');
+        } else {
+            progress.classList.add('low');
         }
     }
 
