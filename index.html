@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortchut icon" type="x-icon" href="_elements/TS-oldico.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/branding/TS-oldico.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="alertStyle.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/alert.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/moods.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
@@ -18,9 +19,14 @@
     <div id="header-footer"></div>
 
     <div id="cover" class="cover">
-        <img src="/_elements/plumbob_green.webp" alt="The Sims Pumbob">
+        <img
+            id="plumbobStatus"
+            src="assets/images/plumbobs/plumbob_green.webp"
+            alt="Plumbob verde: necessidades em bom estado"
+            data-state="green"
+        >
         <div id="coverText" class="coverText">
-            <img src="_elements/TS-logo-main.png" alt="The sims 1">
+            <img src="assets/images/branding/TS-logo-main.png" alt="The Sims 1">
             <h3>The best game ever had</h3>
             <button class="btn btn5">Explore</button>
         </div>
@@ -28,7 +34,7 @@
 
     <div id="module" class="module modWhats">
         <section class="section">
-            <img src="_elements/3240725-the-sims-screenshot.jpg" class="screenShot" alt="">
+            <img src="assets/images/content/3240725-the-sims-screenshot.jpg" class="screenShot" alt="">
             <p>Lançado em 4 de fevereiro de 2000, The Sims 1 foi um jogo de simulação de desenvolvido pela Maxis e Electronic Arts. O jogo permitia que os jogadores criassem e controlassem seus famosos Sims, em um ambiente virtual. Sendo, a principio, um mero Spin-off da série de games Sim City, The Sims foi um sucesso instantâneo e se tornou um dos jogos mais vendidos de todos os tempos.
         </section>
         <br>
@@ -39,39 +45,47 @@
     </div>
 
     <div id="module" class="moduleb modWright">
-        <img id="willImg" class="willImg" src="_elements/Will_Wright2.png" alt="">
+        <img id="willImg" class="willImg" src="assets/images/content/Will_Wright2.png" alt="">
         <p>William Ralph "Will" Wright é designer de jogos americano e co-fundador da Maxis. Ele é conhecido como o designer original de três grandes sucessos do mundo dos Games: The Sims, SimCity e Spore, que é a mais recente série criado por ele. Will Wright conseguiu imaginar em sua mente um conceito completamente novo, onde ele e outras pessoas comandassem a história, ações, e tudo o que fosse possível, por meio de simuladores simples e práticos, porém, poderosos, que pudessem levar a imaginação do jogador aonde ele quiser.
         </p>
     </div>
 
     <!-- CRIAR UM HTML PARA ALERTAS -->
 
-    <div id="alerta" class="alert" style="display:none">
+    <div id="alerta" class="alert" role="dialog" aria-modal="true" aria-labelledby="alert-message" style="display:none">
         <div class="alert-row">
-            <img src="_elements/achievement-img.png" alt="achievement">
-            <p>Meus parabêns, você agora sabe como funciona a pirâmide de Maslow, e aumentou sua habilidade de lógica.</p>
+            <img src="assets/images/content/achievement-img.png" alt="achievement">
+            <p id="alert-message">Meus parabêns, você agora sabe como funciona a pirâmide de Maslow, e aumentou sua habilidade de lógica.</p>
         </div>
         <button class="btn btnCloseAlert">Fechar</button>
     </div>
 
     <div id="alert-border" class="alert-border" style="display:none"></div>
 
-    <!-- <script src="script.js"></script>
-    <script src="alertScript.js"></script> -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="scripts/alert.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/mood-controller.js"></script>
+    <script src="scripts/moods.js"></script>
     <script>
-        $(function () {
-            $("#header-footer").load("header-footer.html", function() {
-                $.getScript("script.js");
-                $.getScript("alertScript.js");
-                $.getScript("moodScript.js", function() {
-                    $.getScript("setupAllMoods.js", function() {
-                        initializeMoods();
-                    });
-                });
-            });
-        });
+        async function initializePage() {
+            const container = document.getElementById('header-footer');
+
+            try {
+                const response = await fetch('partials/header-footer.html');
+
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP ${response.status}`);
+                }
+
+                container.innerHTML = await response.text();
+                initializeNavigation();
+                initializeMoods();
+            } catch (error) {
+                console.error('Não foi possível carregar o cabeçalho e o rodapé:', error);
+            }
+        }
+
+        initializePage();
     </script>
 
 </body>

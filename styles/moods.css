@@ -23,13 +23,27 @@
     width: auto;
 }
 
-.mood-icon {
-    width: 30px;    
-    height: auto;
+.mood-button {
+    width: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     cursor: pointer;
 }
 
-.mood-icon:hover {
+.mood-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.mood-icon {
+    display: block;
+    width: 30px;
+    height: auto;
+}
+
+.mood-button:hover:not(:disabled) .mood-icon,
+.mood-button:focus-visible .mood-icon {
     transform: scale(1.2);
     transition: transform 0.2s ease;
 }
