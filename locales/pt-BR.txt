@@ -1,0 +1,47 @@
+# Metadados
+meta.title=Plumbob Memories: A Sim Nostalgia
+
+# Navegação e capa
+nav.aboutSite=Sobre o site
+nav.aboutWright=Sobre Wright
+nav.maslow=Teoria de Maslow
+nav.radio=TSRadio
+cover.tagline=Plumbob Memories: A Sim Nostalgia
+cover.explore=Explorar
+
+# Conteúdo
+content.screenshotAlt=Uma família de Sims reunida em uma casa no jogo original
+content.about.paragraph1=Lançado em 4 de fevereiro de 2000, The Sims foi um jogo de simulação desenvolvido pela Maxis e publicado pela Electronic Arts. O jogo permitia que as pessoas criassem e controlassem seus famosos Sims em um ambiente virtual. Concebido inicialmente como um spin-off da série SimCity, The Sims foi um sucesso instantâneo e se tornou um dos jogos mais vendidos de todos os tempos.
+content.about.paragraph2=O enorme sucesso de The Sims marcou o nascimento de uma poderosa franquia e levou ao lançamento de seus sucessores: The Sims 2, em 2004; The Sims 3, em 2009; e The Sims 4, em 2014. A cada geração, suas mecânicas foram aprimoradas, tornando a experiência cada vez mais rica e criativa.
+content.about.paragraph3=Ainda assim, certas características e peculiaridades fazem de The Sims uma experiência única. Elas pertencem ao contexto social e tecnológico daquela época e jamais poderiam ser reproduzidas da mesma maneira em seus sucessores. Esta página é dedicada a quem sente saudade de The Sims 1, um jogo que provocou uma verdadeira mudança de paradigma no entretenimento.
+content.willWrightAlt=Retrato de Will Wright, criador de The Sims
+content.wright=William Ralph “Will” Wright é um designer de jogos norte-americano e cofundador da Maxis. Ele é conhecido como o criador de três grandes sucessos dos videogames: SimCity, The Sims e Spore. Wright imaginou um conceito inteiramente novo, no qual as pessoas poderiam comandar histórias, ações e inúmeras possibilidades por meio de simuladores acessíveis e, ao mesmo tempo, poderosos — capazes de levar a imaginação aonde o jogador quisesse.
+
+# Alerta
+alert.imageAlt=Ícone de conquista
+alert.message=Parabéns! Agora você conhece a pirâmide de Maslow e aumentou sua habilidade de lógica.
+common.close=Fechar
+
+# Idioma
+language.openMenu=Escolher idioma
+language.portuguese=Português
+language.english=English
+
+# Plumbob
+plumbob.green=Plumbob verde: necessidades em bom estado
+plumbob.yellow=Plumbob amarelo: algumas necessidades estão baixas
+plumbob.red=Plumbob vermelho: muitas necessidades estão baixas
+
+# Necessidades
+moods.hunger=Fome
+moods.bladder=Banheiro
+moods.fun=Diversão
+moods.energy=Energia
+moods.hygiene=Higiene
+moods.social=Social
+moods.useHunger=Atender à necessidade de fome
+moods.useBladder=Atender à necessidade de ir ao banheiro
+moods.useFun=Atender à necessidade de diversão
+moods.useEnergy=Atender à necessidade de energia
+moods.useHygiene=Atender à necessidade de higiene
+moods.useSocial=Atender à necessidade social

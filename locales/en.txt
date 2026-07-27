@@ -1,0 +1,47 @@
+# Metadata
+meta.title=Plumbob Memories: A Sim Nostalgia
+
+# Navigation and cover
+nav.aboutSite=About this site
+nav.aboutWright=About Wright
+nav.maslow=Maslow's theory
+nav.radio=TSRadio
+cover.tagline=Plumbob Memories: A Sim Nostalgia
+cover.explore=Explore
+
+# Content
+content.screenshotAlt=A family of Sims gathered inside a house in the original game
+content.about.paragraph1=Released on February 4, 2000, The Sims was a life simulation game developed by Maxis and published by Electronic Arts. It allowed players to create and control their famous Sims in a virtual environment. Originally conceived as a spin-off of the SimCity series, The Sims was an instant success and became one of the best-selling games of all time.
+content.about.paragraph2=The enormous success of The Sims marked the birth of a powerful franchise and led to the release of its sequels: The Sims 2 in 2004, The Sims 3 in 2009, and The Sims 4 in 2014. With each generation, its mechanics evolved, making the experience increasingly rich and creative.
+content.about.paragraph3=Even so, certain features and quirks make The Sims a unique experience. They belong to the social and technological context of that era and could never be reproduced in quite the same way by its successors. This page is dedicated to everyone who feels nostalgic for The Sims 1, a game that brought about a true paradigm shift in entertainment.
+content.willWrightAlt=Portrait of Will Wright, creator of The Sims
+content.wright=William Ralph “Will” Wright is an American game designer and co-founder of Maxis. He is known as the creator of three major video game successes: SimCity, The Sims, and Spore. Wright envisioned an entirely new concept in which people could shape stories, actions, and countless possibilities through simulators that were accessible yet powerful — capable of taking the player's imagination wherever it wanted to go.
+
+# Alert
+alert.imageAlt=Achievement icon
+alert.message=Congratulations! You now understand Maslow's hierarchy of needs and have increased your logic skill.
+common.close=Close
+
+# Language
+language.openMenu=Choose language
+language.portuguese=Português
+language.english=English
+
+# Plumbob
+plumbob.green=Green Plumbob: needs are in good shape
+plumbob.yellow=Yellow Plumbob: some needs are running low
+plumbob.red=Red Plumbob: several needs are running low
+
+# Needs
+moods.hunger=Hunger
+moods.bladder=Bladder
+moods.fun=Fun
+moods.energy=Energy
+moods.hygiene=Hygiene
+moods.social=Social
+moods.useHunger=Take care of the hunger need
+moods.useBladder=Take care of the bladder need
+moods.useFun=Take care of the fun need
+moods.useEnergy=Take care of the energy need
+moods.useHygiene=Take care of the hygiene need
+moods.useSocial=Take care of the social need

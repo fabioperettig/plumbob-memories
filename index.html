@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
-    <title>TS1 the best ever had</title>
+    <title data-i18n="meta.title">Plumbob Memories: A Sim Nostalgia</title>
    
 </head>
 <body>
@@ -22,46 +22,57 @@
         <img
             id="plumbobStatus"
             src="assets/images/plumbobs/plumbob_green.webp"
-            alt="Plumbob verde: necessidades em bom estado"
+            alt=""
+            data-i18n-alt="plumbob.green"
             data-state="green"
         >
         <div id="coverText" class="coverText">
             <img src="assets/images/branding/TS-logo-main.png" alt="The Sims 1">
-            <h3>The best game ever had</h3>
-            <button class="btn btn5">Explore</button>
+            <h3 data-i18n="cover.tagline"></h3>
+            <button type="button" class="btn btn5" data-i18n="cover.explore"></button>
         </div>
     </div>
 
     <div id="module" class="module modWhats">
         <section class="section">
-            <img src="assets/images/content/3240725-the-sims-screenshot.jpg" class="screenShot" alt="">
-            <p>Lançado em 4 de fevereiro de 2000, The Sims 1 foi um jogo de simulação de desenvolvido pela Maxis e Electronic Arts. O jogo permitia que os jogadores criassem e controlassem seus famosos Sims, em um ambiente virtual. Sendo, a principio, um mero Spin-off da série de games Sim City, The Sims foi um sucesso instantâneo e se tornou um dos jogos mais vendidos de todos os tempos.
+            <img
+                src="assets/images/content/3240725-the-sims-screenshot.jpg"
+                class="screenShot"
+                alt=""
+                data-i18n-alt="content.screenshotAlt"
+            >
+            <p data-i18n="content.about.paragraph1"></p>
         </section>
-        <br>
-        É de conhecimento geral que o sucesso absoluto de The Sims marcou o nascimento de uma franquia poderosa, levando ao lançamento de seus sucessores: The Sims 2 em 2004, The Sims 3 em 2009 e The Sims 4 em 2014. Além disso, é óbvio que a mecânica da fraquia foi se aprimorando e tornando a jogabilidade do game cada vez melhor e mais criativa.
-        <br><br>
-        Entretanto, há caracteristicas e certas peculiariedades que tornam The Sims 1 uma experiência única, jamais sendo possível de ser replicada em seu sucessores, pois foram características que só fizeram sentido no contexto social e tecnológico daquela época. Sendo assim, esta página é para todos os amantes saudosistas de The Sims 1. Um game que causou uma mudança de paradigma no entretenimento.
-        </p>
+        <p data-i18n="content.about.paragraph2"></p>
+        <p data-i18n="content.about.paragraph3"></p>
     </div>
 
     <div id="module" class="moduleb modWright">
-        <img id="willImg" class="willImg" src="assets/images/content/Will_Wright2.png" alt="">
-        <p>William Ralph "Will" Wright é designer de jogos americano e co-fundador da Maxis. Ele é conhecido como o designer original de três grandes sucessos do mundo dos Games: The Sims, SimCity e Spore, que é a mais recente série criado por ele. Will Wright conseguiu imaginar em sua mente um conceito completamente novo, onde ele e outras pessoas comandassem a história, ações, e tudo o que fosse possível, por meio de simuladores simples e práticos, porém, poderosos, que pudessem levar a imaginação do jogador aonde ele quiser.
-        </p>
+        <img
+            id="willImg"
+            class="willImg"
+            src="assets/images/content/Will_Wright2.png"
+            alt=""
+            data-i18n-alt="content.willWrightAlt"
+        >
+        <p data-i18n="content.wright"></p>
     </div>
-
-    <!-- CRIAR UM HTML PARA ALERTAS -->
 
     <div id="alerta" class="alert" role="dialog" aria-modal="true" aria-labelledby="alert-message" style="display:none">
         <div class="alert-row">
-            <img src="assets/images/content/achievement-img.png" alt="achievement">
-            <p id="alert-message">Meus parabêns, você agora sabe como funciona a pirâmide de Maslow, e aumentou sua habilidade de lógica.</p>
+            <img
+                src="assets/images/content/achievement-img.png"
+                alt=""
+                data-i18n-alt="alert.imageAlt"
+            >
+            <p id="alert-message" data-i18n="alert.message"></p>
         </div>
-        <button class="btn btnCloseAlert">Fechar</button>
+        <button type="button" class="btn btnCloseAlert" data-i18n="common.close"></button>
     </div>
 
     <div id="alert-border" class="alert-border" style="display:none"></div>
 
+    <script src="scripts/i18n.js"></script>
     <script src="scripts/alert.js"></script>
     <script src="scripts/navigation.js"></script>
     <script src="scripts/mood-controller.js"></script>
@@ -78,10 +89,13 @@
                 }
 
                 container.innerHTML = await response.text();
+                initializeLanguageMenu();
+                await initializeI18n();
                 initializeNavigation();
                 initializeMoods();
+                applyTranslations();
             } catch (error) {
-                console.error('Não foi possível carregar o cabeçalho e o rodapé:', error);
+                console.error('Não foi possível inicializar a página:', error);
             }
         }
 

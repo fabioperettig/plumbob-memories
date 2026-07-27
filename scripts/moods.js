@@ -16,15 +16,15 @@ const PLUMBOB_RULES = Object.freeze({
 const PLUMBOB_STATES = Object.freeze({
     green: {
         src: 'assets/images/plumbobs/plumbob_green.webp',
-        alt: 'Plumbob verde: necessidades em bom estado'
+        translationKey: 'plumbob.green'
     },
     yellow: {
         src: 'assets/images/plumbobs/plumbob_yellow.webp',
-        alt: 'Plumbob amarelo: algumas necessidades estão baixas'
+        translationKey: 'plumbob.yellow'
     },
     red: {
         src: 'assets/images/plumbobs/plumbob_red.webp',
-        alt: 'Plumbob vermelho: muitas necessidades estão baixas'
+        translationKey: 'plumbob.red'
     }
 });
 
@@ -75,7 +75,8 @@ function updatePlumbob(plumbob, moodValues) {
 
     const state = PLUMBOB_STATES[nextState];
     plumbob.src = state.src;
-    plumbob.alt = state.alt;
+    plumbob.dataset.i18nAlt = state.translationKey;
+    plumbob.alt = translate(state.translationKey);
     plumbob.dataset.state = nextState;
 }
 
@@ -83,7 +84,8 @@ function initializeMoods() {
     const moodDefinitions = [
         {
             icon: 'hunger.png',
-            name: 'Fome',
+            nameKey: 'moods.hunger',
+            actionKey: 'moods.useHunger',
             barId: 'progressFome',
             buttonClass: 'btnHunger',
             modifiers: {
@@ -95,7 +97,8 @@ function initializeMoods() {
         },
         {
             icon: 'toilet.png',
-            name: 'Banheiro',
+            nameKey: 'moods.bladder',
+            actionKey: 'moods.useBladder',
             barId: 'progressBanheiro',
             buttonClass: 'btnBladder',
             modifiers: {
@@ -107,7 +110,8 @@ function initializeMoods() {
         },
         {
             icon: 'fun.png',
-            name: 'Diversão',
+            nameKey: 'moods.fun',
+            actionKey: 'moods.useFun',
             barId: 'progressDiversao',
             buttonClass: 'btnFun',
             modifiers: {
@@ -119,7 +123,8 @@ function initializeMoods() {
         },
         {
             icon: 'sleep.png',
-            name: 'Energia',
+            nameKey: 'moods.energy',
+            actionKey: 'moods.useEnergy',
             barId: 'progressEnergia',
             buttonClass: 'btnEnergy',
             modifiers: {
@@ -131,7 +136,8 @@ function initializeMoods() {
         },
         {
             icon: 'shower.png',
-            name: 'Higiene',
+            nameKey: 'moods.hygiene',
+            actionKey: 'moods.useHygiene',
             barId: 'progressHigiene',
             buttonClass: 'btnHygiene',
             modifiers: {
@@ -143,7 +149,8 @@ function initializeMoods() {
         },
         {
             icon: 'social.png',
-            name: 'Social',
+            nameKey: 'moods.social',
+            actionKey: 'moods.useSocial',
             barId: 'progressSocial',
             buttonClass: 'btnSocial',
             modifiers: {
@@ -193,7 +200,8 @@ function initializeMoods() {
         bar.classList.add('progress-bar');
         bar.id = mood.barId;
         bar.setAttribute('role', 'progressbar');
-        bar.setAttribute('aria-label', mood.name);
+        bar.dataset.i18nAriaLabel = mood.nameKey;
+        bar.setAttribute('aria-label', translate(mood.nameKey));
         bar.setAttribute('aria-valuemin', '0');
         bar.setAttribute('aria-valuemax', '100');
         barContainer.appendChild(bar);
@@ -201,8 +209,10 @@ function initializeMoods() {
         const button = document.createElement('button');
         button.type = 'button';
         button.classList.add(mood.buttonClass, 'mood-button');
-        button.title = `Usar ${mood.name}`;
-        button.setAttribute('aria-label', `Usar ${mood.name}`);
+        button.dataset.i18nTitle = mood.actionKey;
+        button.dataset.i18nAriaLabel = mood.actionKey;
+        button.title = translate(mood.actionKey);
+        button.setAttribute('aria-label', translate(mood.actionKey));
 
         const icon = document.createElement('img');
         icon.classList.add('mood-icon');

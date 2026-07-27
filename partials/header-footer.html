@@ -1,9 +1,37 @@
 <header>
     <nav id="head" class="head">
-        <button class="btn btn1">what's this site?</button>
-        <button class="btn btn2">About Wright</button>
-        <button class="btn btn3">Maslow theory</button>
-        <button class="btn btn4">TSRadio</button>
+        <div class="nav-links">
+            <button type="button" class="btn btn1" data-i18n="nav.aboutSite"></button>
+            <button type="button" class="btn btn2" data-i18n="nav.aboutWright"></button>
+            <button type="button" class="btn btn3" data-i18n="nav.maslow"></button>
+            <button type="button" class="btn btn4" data-i18n="nav.radio"></button>
+        </div>
+
+        <div class="language-picker">
+            <button
+                id="languageToggle"
+                class="language-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                data-i18n-aria-label="language.openMenu"
+                data-i18n-title="language.openMenu"
+            >
+                <span aria-hidden="true">🌐</span>
+                <span id="currentLanguage">PT</span>
+            </button>
+
+            <div id="languageMenu" class="language-menu" role="menu" hidden>
+                <button type="button" role="menuitem" data-language="pt-BR">
+                    <span class="language-name" data-i18n="language.portuguese"></span>
+                    <span class="language-code">BR</span>
+                </button>
+                <button type="button" role="menuitem" data-language="en">
+                    <span class="language-name" data-i18n="language.english"></span>
+                    <span class="language-code">EN</span>
+                </button>
+            </div>
+        </div>
     </nav>
 </header>
 

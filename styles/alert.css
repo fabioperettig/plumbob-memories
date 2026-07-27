@@ -1,50 +1,87 @@
-.alert{
-    box-sizing: border-box;
-    box-shadow: inset -10px 10px 5px 0px rgba(255, 255, 255, 0.331), inset 10px -10px 10px 0 rgba(0, 0, 0, .2);
-    position:fixed;
+.alert {
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
     z-index: 9999;
-    background-color: #020052;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-.alert-row{
-    display: flex;
-    align-items:start;
-    gap: 10px;
-}
-
-.alert-border{
-    position:fixed;
-    top: 50%;
-    left: 50%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    width: min(620px, calc(100% - 40px));
+    max-height: calc(100vh - 40px);
+    max-height: calc(100svh - 40px);
+    padding: clamp(20px, 4vw, 32px);
+    overflow-y: auto;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+    background-color: #020052;
+    border-radius: 10px;
+    box-shadow:
+        inset -10px 10px 5px 0 rgba(255, 255, 255, 0.331),
+        inset 10px -10px 10px 0 rgba(0, 0, 0, 0.2),
+        0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.alert-row {
+    display: grid;
+    grid-template-columns: minmax(100px, 145px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 4vw, 32px);
+}
+
+.alert-border {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
     backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(1, 7, 45, 0.25);
 }
 
-.alert-row > p{
-    font-size: 12pt;
-    color: rgba(255, 255, 255, 0.75);
-    padding-right: 10px;
+.alert-row > p {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-.alert-row > img{
-    width: 30%;
+.alert-row > img {
+    width: 100%;
+    max-width: 145px;
     height: auto;
+    justify-self: center;
 }
 
-.alert > button{
-    position: relative;
-    margin-left: 40%;
-    margin-top: 5%;
+.alert > button {
+    align-self: flex-end;
+    margin: 0 8px 4px 0;
+    padding: 9px 24px;
+    font-size: 1rem;
+}
+
+@media (max-width: 520px) {
+    .alert {
+        gap: 18px;
+        width: calc(100% - 28px);
+        padding: 22px 20px;
+    }
+
+    .alert-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .alert-row > img {
+        width: min(110px, 34vw);
+    }
+
+    .alert-row > p {
+        font-size: 0.94rem;
+        line-height: 1.55;
+    }
+
+    .alert > button {
+        align-self: stretch;
+        margin: 0 8px 4px;
+    }
 }
