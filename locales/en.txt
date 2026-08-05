@@ -16,6 +16,11 @@ content.about.paragraph2=The enormous success of The Sims marked the birth of a 
 content.about.paragraph3=Even so, certain features and quirks make The Sims a unique experience. They belong to the social and technological context of that era and could never be reproduced in quite the same way by its successors. This page is dedicated to everyone who feels nostalgic for The Sims 1, a game that brought about a true paradigm shift in entertainment.
 content.willWrightAlt=Portrait of Will Wright, creator of The Sims
 content.wright=William Ralph “Will” Wright is an American game designer and co-founder of Maxis. He is known as the creator of three major video game successes: SimCity, The Sims, and Spore. Wright envisioned an entirely new concept in which people could shape stories, actions, and countless possibilities through simulators that were accessible yet powerful — capable of taking the player's imagination wherever it wanted to go.
+content.maslow.paragraph1a=Proposed by Abraham Maslow, the theory states that human beings have a hierarchy of needs. We can only focus on higher needs, such as creativity or success, when more basic ones, such as food and safety, are reasonably satisfied.
+content.maslow.paragraph1b=In the game, your Sim's Needs panel replicates this hierarchy almost perfectly through eight motives. If you do not take care of the base, the Sim refuses to move up the pyramid.
+content.maslow.paragraph2a=Base of the pyramid: These are the biological requirements for human survival: oxygen, water, food, shelter, clothing, warmth, sex, and sleep. If they are not satisfied, the human body cannot function properly.
+content.maslow.paragraph2b=If Hunger reaches zero, the Sim dies. If Bladder reaches zero, they urinate on the floor, lowering Hygiene. If Energy reaches zero, they pass out on the floor. While these bars are in the red, the Sim's artificial intelligence enters emergency mode: they cancel the player's commands, wave at the screen, and cry out for help.
+content.maslow.pyramidAlt=Maslow's pyramid with five stacked levels of needs
 
 # Alert
 alert.imageAlt=Achievement icon

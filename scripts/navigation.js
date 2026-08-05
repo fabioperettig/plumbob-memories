@@ -37,6 +37,5 @@ function initializeNavigation() {
     addClickListener('.btn1', () => scrollToElement('.modWhats', 150));
     addClickListener('.btn5', () => scrollToElement('.modWhats', 150));
     addClickListener('.btn2', () => scrollToElement('.modWright', 50));
-    addClickListener('.btn3', exibirAlerta);
-    addClickListener('#willImg', exibirAlerta);
+    addClickListener('.btn3', () => {exibirAlerta(); scrollToElement('.modMaslow', 150)});
 }

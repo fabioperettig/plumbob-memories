@@ -254,6 +254,103 @@ img {
     filter: drop-shadow(0 0 20px rgb(0, 255, 38));
 }
 
+.maslowPyramid {
+    display: flex;
+    flex: 0 0 48%;
+    width: 48%;
+    min-width: 260px;
+    max-width: 520px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(5px, 0.8vw, 9px);
+}
+
+.maslowStep {
+    position: relative;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    transform-origin: center;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.maslowStep:hover {
+    z-index: 10;
+    transform: scale(1.04);
+    filter: brightness(1.05) drop-shadow(0 0 10px rgba(7, 255, 13, 0.45));
+}
+
+.maslowStep1 {
+    z-index: 5;
+    width: 25%;
+}
+
+.maslowStep2 {
+    z-index: 4;
+    width: 40%;
+}
+
+.maslowStep3 {
+    z-index: 3;
+    width: 55%;
+}
+
+.maslowStep4 {
+    z-index: 2;
+    width: 73%;
+}
+
+.maslowStep5 {
+    z-index: 1;
+    width: 90%;
+}
+
+.maslowParagraphs {
+    display: grid;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.maslowParagraphsBottom {
+    display: grid;
+}
+
+.maslowParagraphs > p,
+.maslowParagraphsBottom > p {
+    grid-area: 1 / 1;
+    align-self: center;
+    transition: opacity 0.4s ease, visibility 0s linear;
+}
+
+.maslowParagraph1a,
+.maslowParagraph1b {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
+.maslowParagraph2a,
+.maslowParagraph2b {
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0s, 0.4s;
+}
+
+.modMaslow:has(.maslowStep5:hover) .maslowParagraph1a,
+.modMaslow:has(.maslowStep5:hover) .maslowParagraph1b {
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0s, 0.4s;
+}
+
+.modMaslow:has(.maslowStep5:hover) .maslowParagraph2a,
+.modMaslow:has(.maslowStep5:hover) .maslowParagraph2b {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
 @media (max-width: 1100px) {
     :root {
         --header-space: 70px;
@@ -299,6 +396,13 @@ img {
         width: 100%;
         min-width: 0;
         max-width: 520px;
+        align-self: center;
+    }
+
+    .maslowPyramid {
+        width: 100%;
+        min-width: 0;
+        max-width: 620px;
         align-self: center;
     }
 

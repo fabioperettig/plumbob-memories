@@ -14,7 +14,7 @@ function exibirAlerta() {
     document.body.classList.add('alerta-exibido');
 
     const audio = new Audio('assets/audio/achievement01.mp3');
-    audio.volume = 0.5;
+    audio.volume = 1;
     audio.play().catch(() => {
         console.warn('O navegador bloqueou a reprodução do áudio.');
     });
