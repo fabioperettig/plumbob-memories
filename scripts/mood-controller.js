@@ -5,6 +5,7 @@ function setupMood({
     decreaseAmount,
     increaseAmount,
     coolDown,
+    onActivate = () => {},
     onValueChange = () => {}
 }) {
     const progress = document.getElementById(barId);
@@ -18,6 +19,7 @@ function setupMood({
     const maximumValue = 100;
     const increaseInterval = 100;
     let currentValue = maximumValue;
+    let previousValue = maximumValue;
     let decreaseTimer = null;
     let increaseTimer = null;
     let coolDownTimer = null;
@@ -37,7 +39,8 @@ function setupMood({
             progress.classList.add('low');
         }
 
-        onValueChange(currentValue);
+        onValueChange(currentValue, previousValue);
+        previousValue = currentValue;
     }
 
     function stopDecrease() {
@@ -88,6 +91,7 @@ function setupMood({
         }
 
         button.disabled = true;
+        onActivate();
         startIncrease();
 
         coolDownTimer = setTimeout(() => {

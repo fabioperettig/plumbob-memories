@@ -114,6 +114,12 @@ function initializeMoods() {
             actionKey: 'moods.useFun',
             barId: 'progressDiversao',
             buttonClass: 'btnFun',
+            onActivate() {
+                muteFunSoundsTemporarily(3000);
+            },
+            onValueChange(value, previousValue) {
+                checkFunSoundThreshold(previousValue, value);
+            },
             modifiers: {
                 intervalMultiplier: 4.5,
                 decreaseMultiplier: 3,
@@ -244,9 +250,10 @@ function initializeMoods() {
     moods.forEach(mood => {
         const controller = setupMood({
             ...mood,
-            onValueChange(value) {
+            onValueChange(value, previousValue) {
                 moodValues.set(mood.barId, value);
                 updatePlumbob(plumbob, moodValues);
+                mood.onValueChange?.(value, previousValue);
             }
         });
 

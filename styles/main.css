@@ -331,21 +331,62 @@ img {
 }
 
 .maslowParagraph2a,
-.maslowParagraph2b {
+.maslowParagraph2b,
+.maslowParagraph3a,
+.maslowParagraph3b,
+.maslowParagraph4a,
+.maslowParagraph4b,
+.maslowParagraph5a,
+.maslowParagraph5b,
+.maslowParagraph6a,
+.maslowParagraph6b {
     visibility: hidden;
     opacity: 0;
     transition-delay: 0s, 0.4s;
 }
 
-.modMaslow:has(.maslowStep5:hover) .maslowParagraph1a,
-.modMaslow:has(.maslowStep5:hover) .maslowParagraph1b {
+.modMaslow:has(.maslowStep:hover) .maslowParagraph1a,
+.modMaslow:has(.maslowStep:hover) .maslowParagraph1b {
     visibility: hidden;
     opacity: 0;
     transition-delay: 0s, 0.4s;
 }
 
+/* Base da pirâmide */
 .modMaslow:has(.maslowStep5:hover) .maslowParagraph2a,
 .modMaslow:has(.maslowStep5:hover) .maslowParagraph2b {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
+/* Segundo nível */
+.modMaslow:has(.maslowStep4:hover) .maslowParagraph3a,
+.modMaslow:has(.maslowStep4:hover) .maslowParagraph3b {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
+/* Terceiro nível */
+.modMaslow:has(.maslowStep3:hover) .maslowParagraph4a,
+.modMaslow:has(.maslowStep3:hover) .maslowParagraph4b {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
+/* Quarto nível */
+.modMaslow:has(.maslowStep2:hover) .maslowParagraph5a,
+.modMaslow:has(.maslowStep2:hover) .maslowParagraph5b {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
+/* Topo da pirâmide */
+.modMaslow:has(.maslowStep1:hover) .maslowParagraph6a,
+.modMaslow:has(.maslowStep1:hover) .maslowParagraph6b {
     visibility: visible;
     opacity: 1;
     transition-delay: 0s, 0s;

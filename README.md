@@ -35,18 +35,19 @@ Electronic Arts.
 - [x] Plumbob animado que muda entre verde, amarelo e vermelho conforme o estado
   geral das necessidades.
 - [x] Alerta de conquista com efeito sonoro.
+- [x] Música de abertura com reprodução automática e fallback para a primeira
+  interação quando o navegador bloqueia o autoplay.
+- [x] Efeitos vocais aleatórios nos níveis 75, 50 e 25 da barra de Diversão,
+  com proteção contra repetição e silêncio temporário ao atender à necessidade.
 - [x] Internacionalização em português e inglês, com preferência salva no
   navegador.
 - [x] Estrutura inicial da Pirâmide de Maslow, formada por cinco imagens
   responsivas com animações de hover.
-- [x] Interação da base da pirâmide, relacionando necessidades fisiológicas aos
-  comportamentos dos Sims.
+- [x] Interações nos cinco níveis da Pirâmide de Maslow, relacionando cada
+  camada da teoria aos comportamentos e às necessidades dos Sims.
 
 ## Em desenvolvimento
 
-- [ ] Conteúdo e interações para os demais níveis da Pirâmide de Maslow.
-- [ ] Expansão da relação entre a teoria de Maslow e as oito necessidades do
-  The Sims original.
 - [ ] Funcionalidade do botão **TSRadio**.
 - [ ] Novos conteúdos históricos e detalhes nostálgicos sobre The Sims 1.
 - [ ] Revisão final das traduções e do comportamento responsivo das novas

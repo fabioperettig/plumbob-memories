@@ -14,14 +14,28 @@ content.screenshotAlt=Uma família de Sims reunida em uma casa no jogo original
 content.about.paragraph1=Lançado em 4 de fevereiro de 2000, The Sims foi um jogo de simulação desenvolvido pela Maxis e publicado pela Electronic Arts. O jogo permitia que as pessoas criassem e controlassem seus famosos Sims em um ambiente virtual. Concebido inicialmente como um spin-off da série SimCity, The Sims foi um sucesso instantâneo e se tornou um dos jogos mais vendidos de todos os tempos.
 content.about.paragraph2=O enorme sucesso de The Sims marcou o nascimento de uma poderosa franquia e levou ao lançamento de seus sucessores: The Sims 2, em 2004; The Sims 3, em 2009; e The Sims 4, em 2014. A cada geração, suas mecânicas foram aprimoradas, tornando a experiência cada vez mais rica e criativa.
 content.about.paragraph3=Ainda assim, certas características e peculiaridades fazem de The Sims uma experiência única. Elas pertencem ao contexto social e tecnológico daquela época e jamais poderiam ser reproduzidas da mesma maneira em seus sucessores. Esta página é dedicada a quem sente saudade de The Sims 1, um jogo que provocou uma verdadeira mudança de paradigma no entretenimento.
+
 content.willWrightAlt=Retrato de Will Wright, criador de The Sims
 content.wright=William Ralph “Will” Wright é um designer de jogos norte-americano e cofundador da Maxis. Ele é conhecido como o criador de três grandes sucessos dos videogames: SimCity, The Sims e Spore. Wright imaginou um conceito inteiramente novo, no qual as pessoas poderiam comandar histórias, ações e inúmeras possibilidades por meio de simuladores acessíveis e, ao mesmo tempo, poderosos — capazes de levar a imaginação aonde o jogador quisesse.
+
 content.maslow.paragraph1a=Proposta por Abraham Maslow, a teoria diz que os seres humanos possuem uma hierarquia de necessidades. Nós só conseguimos focar em necessidades mais altas (como criatividade ou sucesso) quando as mais básicas (como comida e segurança) estão minimamente satisfeitas.
 content.maslow.paragraph1b=No jogo, a barra de "Necessidades" (Needs) do seu Sim replica essa hierarquia quase perfeitamente através de 8 motivos. Se você não cuidar da base, o Sim se recusa a subir na pirâmide.
+
 content.maslow.paragraph2a=Base da pirâmide: São os requisitos biológicos para a sobrevivência humana: oxigênio, água, comida, abrigo, vestuário, calor, sexo e sono. Se não forem satisfeitas, o corpo humano não funciona corretamente.
 content.maslow.paragraph2b=Se a Fome zera, o Sim morre. Se a Bexiga zera, ele urina no chão (derrubando a Higiene). Se a Energia zera, ele desmaia no piso. Enquanto essas barras estiverem no vermelho, a inteligência artificial (IA) do Sim entra em modo de emergência: ele cancela os comandos do jogador, acena para a tela e grita por ajuda.
-content.maslow.paragraph3a=Base da pirâmide: São os requisitos biológicos para a sobrevivência humana: oxigênio, água, comida, abrigo, vestuário, calor, sexo e sono. Se não forem satisfeitas, o corpo humano não funciona corretamente.
-content.maslow.paragraph3b=Se a Fome zera, o Sim morre. Se a Bexiga zera, ele urina no chão (derrubando a Higiene). Se a Energia zera, ele desmaia no piso. Enquanto essas barras estiverem no vermelho, a inteligência artificial (IA) do Sim entra em modo de emergência: ele cancela os comandos do jogador, acena para a tela e grita por ajuda.
+
+content.maslow.paragraph3a=Segundo nível da pirâmide: São os requisitos de estabilidade, ordem e proteção contra os perigos do ambiente. Envolve a segurança do corpo, a garantia de recursos, a saúde e a busca por um espaço previsível. Sem essa estabilidade, o indivíduo vive em constante estado de alerta e ansiedade.
+content.maslow.paragraph3b=No jogo, isso se reflete nas barras de Conforto e Ambiente. Um Sim sem cadeiras adequadas ou em pé por muito tempo fica exausto rapidamente. Se a casa estiver suja, cheia de lixo, poças ou pratos usados, a barra de Ambiente despenca, destruindo o humor do Sim e impedindo que ele relaxe ou realize atividades produtivas.
+
+content.maslow.paragraph4a=Terceiro nível da pirâmide: São as necessidades de associação, afeto e pertencimento a grupos sociais. Envolve o desejo de receber e dar amor, cultivar amizades, manter laços familiares e ser aceito. A ausência de conexões significativas gera solidão, isolamento e declínio na saúde mental.
+content.maslow.paragraph4b=A barra de Social dita a saúde mental do Sim. Ficar isolado por muito tempo faz o medidor zerar; o Sim entra em depressão profunda, começa a chorar espontaneamente e acena para o jogador pedindo socorro. Para recuperar, o jogador é obrigado a telefonar para vizinhos, convidar amigos ou interagir com outros Sims.
+
+content.maslow.paragraph5a=Quarto nível da pirâmide: São as necessidades de reconhecimento, status, respeito e auto-estima. Divide-se no desejo de competência e independência pessoal (auto-estima) e na busca por reputação, prestígio e valorização vinda dos outros. A frustração neste nível gera sentimentos de inferioridade e fraqueza.
+content.maslow.paragraph5b=Em TS1, a Estima opera de forma externa e estética. A barra de Higiene limpa evita a rejeição social imediata ao tentar interagir. Além disso, a progressão na Carreira funciona como o medidor de status supremo: para ser promovido e ganhar prestígio, o jogo exige que o Sim acumule uma quantidade específica de amigos na vizinhança.
+
+content.maslow.paragraph6a=Topo da pirâmide: É a necessidade de crescimento pessoal, autonomia e expressão do potencial máximo do indivíduo. Envolve a criatividade, a busca por conhecimento, a solução de problemas e a autossatisfação. É o estado onde a pessoa faz aquilo para o qual ela sente que nasceu para fazer.
+content.maslow.paragraph6b=É o topo do bem-estar do Sim, representado pela barra de Diversão e pelo ganho de Habilidades. Um Sim só atinge o ápice se usar seu tempo livre para ler, jogar xadrez ou pintar. Com todas as necessidades anteriores verdes, a IA do Sim se estabiliza, permitindo que ele estude culinária, mecânica ou carisma sem interrupções.
+
 content.maslow.pyramidAlt=Pirâmide de Maslow com cinco níveis de necessidades empilhados
 
 # Alerta
