@@ -18,7 +18,8 @@ vida.
 Além do conteúdo histórico, o projeto recria elementos da interface original e
 transforma a navegação em uma pequena experiência interativa. As necessidades
 diminuem com o tempo, podem ser recuperadas pelo usuário e afetam diretamente a
-cor do Plumbob.
+cor do Plumbob. O HUD também apresenta o saldo de Simoleons, enquanto a seção
+da Pirâmide de Maslow relaciona a teoria às necessidades dos Sims.
 
 Este é um projeto de fã, sem fins comerciais e sem vínculo oficial com Maxis ou
 Electronic Arts.
@@ -26,12 +27,17 @@ Electronic Arts.
 ## Recursos concluídos
 
 - [x] Interface inspirada na identidade visual de The Sims 1.
-- [x] Layout responsivo para computadores, tablets e celulares.
+- [x] Layout responsivo para computadores, tablets e celulares, com header e
+  HUD inferior reorganizados para evitar sobreposições em telas menores.
 - [x] Seções sobre o primeiro jogo e seu criador, Will Wright.
 - [x] Navegação suave pelo cabeçalho.
 - [x] Sistema interativo com seis necessidades: Fome, Banheiro, Diversão,
   Energia, Higiene e Social.
 - [x] Barras que diminuem com o tempo e podem ser recuperadas individualmente.
+- [x] Mostrador de Simoleons integrado ao painel de necessidades, com suporte a
+  ganhos, gastos, feedback visual e limite máximo de 999.999.999.
+- [x] API de Simoleons preparada para definir, adicionar ou remover dinheiro e
+  conectar futuramente eventos e popups ao saldo.
 - [x] Plumbob animado que muda entre verde, amarelo e vermelho conforme o estado
   geral das necessidades.
 - [x] Alerta de conquista com efeito sonoro.
@@ -41,13 +47,15 @@ Electronic Arts.
   com proteção contra repetição e silêncio temporário ao atender à necessidade.
 - [x] Internacionalização em português e inglês, com preferência salva no
   navegador.
-- [x] Estrutura inicial da Pirâmide de Maslow, formada por cinco imagens
-  responsivas com animações de hover.
+- [x] Pirâmide de Maslow formada por cinco imagens responsivas, animações de
+  hover e uma textura fotográfica recortada pelos próprios degraus, com
+  controles CSS de opacidade, desfoque e relevo.
 - [x] Interações nos cinco níveis da Pirâmide de Maslow, relacionando cada
   camada da teoria aos comportamentos e às necessidades dos Sims.
 
 ## Em desenvolvimento
 
+- [ ] Eventos e popups interativos capazes de conceder ou retirar Simoleons.
 - [ ] Funcionalidade do botão **TSRadio**.
 - [ ] Novos conteúdos históricos e detalhes nostálgicos sobre The Sims 1.
 - [ ] Revisão final das traduções e do comportamento responsivo das novas
@@ -84,6 +92,23 @@ http://localhost:8000
 
 Também é possível utilizar extensões como **Live Server** no Visual Studio Code.
 
+## Testando o saldo de Simoleons
+
+O saldo começa em `0` e pode ser controlado pelo console do navegador durante o
+desenvolvimento:
+
+```js
+simoleons.set(25000);    // Define o saldo
+simoleons.add(5000);     // Adiciona Simoleons
+simoleons.remove(1250);  // Remove Simoleons
+simoleons.balance;       // Consulta o saldo atual
+simoleons.maximum;       // Consulta o limite máximo
+```
+
+Valores decimais são convertidos em inteiros, valores negativos não reduzem o
+saldo abaixo de zero e quantias acima do limite são ajustadas automaticamente
+para `999.999.999`.
+
 ## Estrutura do projeto
 
 ```text
@@ -101,13 +126,14 @@ Também é possível utilizar extensões como **Live Server** no Visual Studio C
 │   ├── en.txt              # Traduções em inglês
 │   └── pt-BR.txt           # Traduções em português
 ├── partials/
-│   └── header-footer.html  # Cabeçalho e área fixa das necessidades
+│   └── header-footer.html  # Cabeçalho e HUD fixo inferior
 ├── scripts/
 │   ├── alert.js            # Alerta de conquista
 │   ├── i18n.js             # Internacionalização
 │   ├── mood-controller.js  # Comportamento individual das barras
 │   ├── moods.js            # Criação e integração das necessidades
-│   └── navigation.js       # Navegação suave entre seções
+│   ├── navigation.js       # Navegação suave entre seções
+│   └── simoleons.js        # Saldo, ganhos e gastos de Simoleons
 ├── styles/
 │   ├── alert.css
 │   ├── footer.css

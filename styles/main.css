@@ -255,6 +255,24 @@ img {
 }
 
 .maslowPyramid {
+    /* Controles da imagem sobreposta */
+    --maslow-background-opacity: 1.0;
+    --maslow-background-saturation: 0.0;
+    --maslow-background-brightness: 0.75;
+    --maslow-background-contrast: 1.5;
+    --maslow-background-blur: 1px;
+    --maslow-background-blend-mode: overlay;
+    --maslow-background-size: 150cqw;
+    --maslow-background-position-x: center;
+    --maslow-background-offset-y: 0cqw;
+
+    /* Controles do relevo (use opacidade 0 para desligar) */
+    --maslow-bevel-opacity: 0.42;
+    --maslow-bevel-size: 3px;
+    --maslow-bevel-softness: 5px;
+    --maslow-pyramid-gap: clamp(5px, 0.8vw, 9px);
+
+    container-type: inline-size;
     display: flex;
     flex: 0 0 48%;
     width: 48%;
@@ -263,45 +281,144 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: clamp(5px, 0.8vw, 9px);
+    gap: var(--maslow-pyramid-gap);
 }
 
 .maslowStep {
     position: relative;
     display: block;
-    height: auto;
-    object-fit: contain;
+    filter:
+        drop-shadow(
+            calc(0px - var(--maslow-bevel-size))
+            calc(0px - var(--maslow-bevel-size))
+            var(--maslow-bevel-softness)
+            rgb(166 196 255 / var(--maslow-bevel-opacity))
+        )
+        drop-shadow(
+            var(--maslow-bevel-size)
+            var(--maslow-bevel-size)
+            var(--maslow-bevel-softness)
+            rgb(0 3 45 / var(--maslow-bevel-opacity))
+        );
     transform-origin: center;
     transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.maslowStep > img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+}
+
+.maslowStep::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #071775;
+    content: "";
+    pointer-events: none;
+    -webkit-mask-image: var(--maslow-step-mask);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-image: var(--maslow-step-mask);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+}
+
+.maslowStep::after {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background-image: url("../assets/images/maslow/maslow-background.jpg");
+    background-repeat: no-repeat;
+    background-position:
+        var(--maslow-background-position-x)
+        calc(var(--maslow-step-background-y) + var(--maslow-background-offset-y));
+    background-size: var(--maslow-background-size) auto;
+    content: "";
+    filter:
+        blur(var(--maslow-background-blur))
+        saturate(var(--maslow-background-saturation))
+        brightness(var(--maslow-background-brightness))
+        contrast(var(--maslow-background-contrast));
+    mix-blend-mode: var(--maslow-background-blend-mode);
+    opacity: var(--maslow-background-opacity);
+    pointer-events: none;
+    -webkit-mask-image: var(--maslow-step-mask);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-image: var(--maslow-step-mask);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
 }
 
 .maslowStep:hover {
     z-index: 10;
     transform: scale(1.04);
-    filter: brightness(1.05) drop-shadow(0 0 10px rgba(7, 255, 13, 0.45));
+    filter:
+        brightness(1.05)
+        drop-shadow(
+            calc(0px - var(--maslow-bevel-size))
+            calc(0px - var(--maslow-bevel-size))
+            var(--maslow-bevel-softness)
+            rgb(166 196 255 / var(--maslow-bevel-opacity))
+        )
+        drop-shadow(
+            var(--maslow-bevel-size)
+            var(--maslow-bevel-size)
+            var(--maslow-bevel-softness)
+            rgb(0 3 45 / var(--maslow-bevel-opacity))
+        )
+        drop-shadow(0 0 10px rgba(7, 255, 13, 0.45));
 }
 
 .maslowStep1 {
+    --maslow-step-mask: url("../assets/images/maslow/maslow-1.png");
+    --maslow-step-background-y: 0cqw;
+
     z-index: 5;
     width: 25%;
 }
 
 .maslowStep2 {
+    --maslow-step-mask: url("../assets/images/maslow/maslow-2.png");
+    --maslow-step-background-y:
+        calc(-22.136cqw - var(--maslow-pyramid-gap));
+
     z-index: 4;
     width: 40%;
 }
 
 .maslowStep3 {
+    --maslow-step-mask: url("../assets/images/maslow/maslow-3.png");
+    --maslow-step-background-y:
+        calc(-36.093cqw - var(--maslow-pyramid-gap) - var(--maslow-pyramid-gap));
+
     z-index: 3;
     width: 55%;
 }
 
 .maslowStep4 {
+    --maslow-step-mask: url("../assets/images/maslow/maslow-4.png");
+    --maslow-step-background-y:
+        calc(-49.279cqw - var(--maslow-pyramid-gap) - var(--maslow-pyramid-gap) - var(--maslow-pyramid-gap));
+
     z-index: 2;
     width: 73%;
 }
 
 .maslowStep5 {
+    --maslow-step-mask: url("../assets/images/maslow/maslow-5.png");
+    --maslow-step-background-y:
+        calc(-63.338cqw - var(--maslow-pyramid-gap) - var(--maslow-pyramid-gap) - var(--maslow-pyramid-gap) - var(--maslow-pyramid-gap));
+
     z-index: 1;
     width: 90%;
 }
@@ -452,37 +569,77 @@ img {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
     :root {
-        --header-space: 90px;
-        --footer-space: 128px;
+        --header-space: 96px;
+        --footer-space: 154px;
     }
 
     .head {
-        gap: 6px;
-        min-height: 78px;
-        padding: 6px 8px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        min-height: 82px;
+        padding: 7px 10px;
     }
 
     .nav-links {
         display: grid;
-        flex: 1 1 auto;
-        grid-template-columns: repeat(2, max-content);
-        gap: 4px 6px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px 8px;
+        width: 100%;
         max-width: none;
+        padding-inline: 4px;
         overflow: visible;
     }
 
     .head .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        min-height: 30px;
         margin: 0;
-        padding: 6px 9px;
-        font-size: clamp(0.64rem, 2.8vw, 0.74rem);
+        padding: 6px 10px;
+        font-size: clamp(0.68rem, 1.8vw, 0.78rem);
+        line-height: 1.15;
+        text-align: center;
     }
 
     .language-picker {
         position: relative;
         right: auto;
-        flex: 0 0 auto;
+        justify-self: end;
+    }
+
+    .language-toggle {
+        min-width: 64px;
+        padding: 8px 7px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --header-space: 90px;
+        --footer-space: 166px;
+    }
+
+    .head {
+        gap: 8px;
+        min-height: 78px;
+        padding: 6px 8px;
+    }
+
+    .nav-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px 7px;
+        padding-inline: 3px;
+    }
+
+    .head .btn {
+        padding: 6px 9px;
+        font-size: clamp(0.64rem, 2.8vw, 0.74rem);
     }
 
     .language-toggle {
@@ -562,12 +719,13 @@ img {
     }
 
     .head {
-        gap: 4px;
+        gap: 6px;
         padding-inline: 5px;
     }
 
     .nav-links {
-        gap: 3px 4px;
+        gap: 3px 6px;
+        padding-inline: 2px;
     }
 
     .head .btn {

@@ -45,6 +45,10 @@ plumbob.green=Green Plumbob: needs are in good shape
 plumbob.yellow=Yellow Plumbob: some needs are running low
 plumbob.red=Red Plumbob: several needs are running low
 
+# Simoleons
+simoleons.iconAlt=Simoleon symbol
+simoleons.balanceLabel=Simoleon balance
+
 # Needs
 moods.hunger=Hunger
 moods.bladder=Bladder

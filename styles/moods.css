@@ -1,7 +1,8 @@
 .moodContainer {
-    width: 100%;
     display: flex;
+    flex: 0 1 auto;
     justify-content: center;
+    width: auto;
 }
 
 .mood-grid {
@@ -85,8 +86,74 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: clamp(20px, 3vw, 42px);
     padding: 12px clamp(16px, 4vw, 40px);
+    border-top: 1px solid rgba(135, 171, 214, 0.35);
     background-color: #001a57;
+    box-shadow: 0 -5px 16px rgba(0, 0, 0, 0.28);
+}
+
+.simoleon-wallet {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+    min-width: 170px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #426d9d 0%, #254b7d 100%);
+    box-shadow:
+        inset 2px 2px 2px rgba(255, 255, 255, 0.42),
+        inset -2px -2px 2px rgba(0, 17, 61, 0.8),
+        0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.simoleon-icon {
+    display: block;
+    width: 22px;
+    height: 30px;
+    object-fit: contain;
+    filter:
+        invert(78%)
+        sepia(91%)
+        saturate(0%)
+        hue-rotate(69deg)
+        brightness(102%)
+        contrast(109%)
+        drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+}
+
+.simoleon-amount {
+    min-width: 11ch;
+    color: #ffffff;
+    font-size: clamp(1rem, 1.6vw, 1.22rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    text-align: left;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+.simoleon-wallet.is-gaining .simoleon-amount {
+    animation: simoleon-gain 0.45s ease;
+}
+
+.simoleon-wallet.is-losing .simoleon-amount {
+    animation: simoleon-loss 0.45s ease;
+}
+
+@keyframes simoleon-gain {
+    50% {
+        color: #7dff64;
+        transform: scale(1.07);
+    }
+}
+
+@keyframes simoleon-loss {
+    50% {
+        color: #ff7777;
+        transform: scale(1.07);
+    }
 }
 
 @media (max-width: 900px) {
@@ -100,15 +167,39 @@
     }
 }
 
+@media (max-width: 760px) {
+    #footerZone {
+        display: grid;
+        grid-template-columns: minmax(0, 520px);
+        gap: 8px;
+    }
+
+    .simoleon-wallet {
+        justify-self: start;
+        min-width: 158px;
+        padding-block: 4px;
+    }
+
+    .moodContainer,
+    .mood-grid {
+        width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     #footerZone {
+        grid-template-columns: minmax(0, 440px);
         padding: 9px 12px;
+    }
+
+    .moodContainer {
+        width: 100%;
     }
 
     .mood-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px 14px;
-        width: min(100%, 440px);
+        width: 100%;
     }
 
     .mood-row {
@@ -143,5 +234,12 @@
 
     .mood-row {
         gap: 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .simoleon-wallet.is-gaining .simoleon-amount,
+    .simoleon-wallet.is-losing .simoleon-amount {
+        animation: none;
     }
 }

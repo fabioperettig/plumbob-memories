@@ -78,6 +78,9 @@ function applyTranslations() {
     });
 
     updateLanguageControls();
+    document.dispatchEvent(new CustomEvent('languagechange', {
+        detail: { language: currentLanguage }
+    }));
 }
 
 async function setLanguage(language, { persist = true } = {}) {

@@ -65,11 +65,21 @@
                 role="img"
                 data-i18n-aria-label="content.maslow.pyramidAlt"
             >
-                <img src="assets/images/maslow/maslow-1.png" class="maslowStep maslowStep1" alt="">
-                <img src="assets/images/maslow/maslow-2.png" class="maslowStep maslowStep2" alt="">
-                <img src="assets/images/maslow/maslow-3.png" class="maslowStep maslowStep3" alt="">
-                <img src="assets/images/maslow/maslow-4.png" class="maslowStep maslowStep4" alt="">
-                <img src="assets/images/maslow/maslow-5.png" class="maslowStep maslowStep5" alt="">
+                <div class="maslowStep maslowStep1">
+                    <img src="assets/images/maslow/maslow-1.png" alt="">
+                </div>
+                <div class="maslowStep maslowStep2">
+                    <img src="assets/images/maslow/maslow-2.png" alt="">
+                </div>
+                <div class="maslowStep maslowStep3">
+                    <img src="assets/images/maslow/maslow-3.png" alt="">
+                </div>
+                <div class="maslowStep maslowStep4">
+                    <img src="assets/images/maslow/maslow-4.png" alt="">
+                </div>
+                <div class="maslowStep maslowStep5">
+                    <img src="assets/images/maslow/maslow-5.png" alt="">
+                </div>
             </div>
             <div class="maslowParagraphs">
                 <p class="maslowParagraph1a" data-i18n="content.maslow.paragraph1a"></p>
@@ -116,6 +126,7 @@
     <script src="scripts/navigation.js"></script>
     <script src="scripts/mood-controller.js"></script>
     <script src="scripts/moods.js"></script>
+    <script src="scripts/simoleons.js"></script>
     <script>
         async function initializePage() {
             const container = document.getElementById('header-footer');
@@ -132,6 +143,7 @@
                 await initializeI18n();
                 initializeNavigation();
                 initializeMoods();
+                initializeSimoleons();
                 applyTranslations();
             } catch (error) {
                 console.error('Não foi possível inicializar a página:', error);
